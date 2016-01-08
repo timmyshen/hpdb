@@ -1,0 +1,185 @@
+	A:link 		{ color: rgb(0,0,128); } 
+	A:visited 	{ color: rgb(0,0,128); } 
+	A:hover 	{ 
+					color: rgb(0,0,128); 
+					text-decoration: none; 
+				} 
+				
+	.cmLink		{ text-decoration: none; }
+	.cmLink:hover { text-decoration: underline; }
+	.cmLink2		{ text-decoration: none; }
+	.cmLink2:hover { text-decoration: none; }
+	
+	.boldLink		{ text-decoration: none; font-weight: bold; }
+	.boldLink:hover { text-decoration: underline; font-weight: bold; }
+
+	A.whiteLink {
+					color:rgb(255,255,255); 
+					font-weight:bold; 
+					text-decoration: none;
+				}
+	A.whiteLink:visited	{ 
+					color:rgb(255,255,255); 
+					font-weight:bold; 
+					text-decoration: none;
+				}
+	A.whiteLink:hover { 
+					color:rgb(255,255,255); 
+					font-weight:bold;  
+					text-decoration: underline; 
+				}
+	A.blackLink {
+					color:rgb(0,0,0); 
+					font-weight:bold; 
+					text-decoration: none;
+				}
+	A.blackLink:visited	{ 
+					color:rgb(0,0,0); 
+					font-weight:bold; 
+					text-decoration: none;
+				}
+	A.blackLink:hover { 
+					color:rgb(0,0,0); 
+					font-weight:bold; 
+					text-decoration: underline; 
+				}
+	SPAN.instructions {
+					color:blue;
+					font-weight:bold;
+					font-size:12px;
+					text-decoration:underline;
+				}
+	SPAN.instructions_no_ul {
+					color:blue;
+					font-weight:bold;
+					font-size:12px;
+				}
+	SPAN.title 	{  
+					color: rgb(0,50,100); 
+					font-family: Verdana, Arial, Helvetica; 
+					font-size : 13px; 
+					font-weight: bold; 
+				}
+	SPAN.hint 	{  
+					color: rgb(128,128,128); 
+					font-family: Verdana, Arial, Helvetica; 
+					font-size : 11px; 
+					font-style: italic; 
+					text-decoration: none 
+				}
+	SPAN.titleblack { 
+					FONT-WEIGHT: bold; 
+					FONT-SIZE: 13px; 
+					COLOR: rgb(0,0,0); 
+					FONT-FAMILY: Verdana, Arial, Helvetica;
+				} 
+	SPAN.subtitle {
+					color: rgb(48,48,48); 
+					font-family: Verdana, Arial, Helvetica; 
+					font-size : 11px; 
+					font-weight: bold; 
+					text-decoration: none; 
+				}	
+	.readonly 	{
+					background: rgb(240,240,240); 
+					font-size : 11px; 
+					border: solid 1px rgb(0,53,106); 
+				}
+	.button 	{ 
+					font-family: Verdana, Arial, Helvetica;
+					font-size : 11px;
+					height: 20px;
+  				}	
+	SPAN.columnHeader { 
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size : 11px;	
+					color: rgb(0,31,102);
+					font-weight: bold;
+					text-decoration: none;
+					white-space: nowrap;
+				}
+	BODY {
+					font-family: Verdana, Arial, Helvetica;
+					font-size : 11px;
+					color: black;
+				}
+	TD {
+					font-family: Verdana, Arial, Helvetica;
+					font-size : 11px;
+	}
+	.cmInput {
+					font-family: Verdana, Arial, Helvetica;
+					font-size : 11px;	
+					border: 1px solid rgb(127,157,185);
+					margin: 0px;
+	}
+	SELECT {
+					font-family: Verdana, Arial, Helvetica;
+					font-size : 11px;
+					border: 1px solid rgb(127,157,185);
+	}
+	TEXTAREA {
+					font-family: Verdana, Arial, Helvetica;
+					font-size : 11px;
+					border: 1px solid rgb(127,157,185);
+	}
+	TABLE.controlPanel {
+					border:solid 1px #93BEE2; 
+					background-color: #f3f7fd;
+	}
+	TABLE.adjustment {
+					border:solid 2px rgb(51,102,153); 
+					background-color:white;
+	}
+	TD.dotted {
+		border-bottom: 1px dotted rgb(192,192,192);
+	}
+	
+	DIV.hoverpane {
+		background-color:#E2EBF6;
+		border:solid 1px rgb(147,189,226);
+	}
+	
+	.error-msg {
+		color:red;
+	}
+	
+	TABLE.gridview TR.header, TABLE.rowview TR.header { background-color: #93BEE2; }
+	TABLE.gridview, TABLE.gridview TD { border-width: 1px; border-style: solid; }
+	TABLE.gridview { border-color: #93BEE2 white white #93BEE2; }
+	TABLE.gridview TD, TABLE.rowview TD { border-color: white #93BEE2 #93BEE2 white; }
+	TABLE.gridview TD TD, TABLE.rowview TD TD { border-style:none; border-width:0px; border-color:black; }
+	
+	TABLE.rowview { border-color: white; }
+	TABLE.rowview, TABLE.rowview TD { border-width: 1px 0px; border-style: solid; padding:3px 0px; }
+	TABLE.rowview TD { border-color: white #E5E5E5 #E5E5E5 white; }
+	
+	/* use innergridview for nesting grid-like tables inside of others. This is a hack to get  around IE's lack of child selectors */
+	TABLE.innergridview TR.header { background-color: #93BEE2 !important; }
+	TABLE.innergridview, TABLE.innergridview TD { border-width: 1px !important; border-style: solid !important; }
+	TABLE.innergridview { border-color: #93BEE2 white white #93BEE2 !important; }
+	TABLE.innergridview TD { border-color: white #93BEE2 #93BEE2 white !important; }
+	
+	.widgetloader { background:url(images/loading.gif) no-repeat; }
+	
+	.legal{font-family:Verdana; font-size: 9px; font-weight:normal;line-height:7pt;}
+	
+	.ui-autocomplete { height: 200px; overflow-y: auto; overflow-x: hidden; }
+	
+	div.tfp-list { display:none; position:absolute; z-index:100; background-color: white; color:#000088; }
+	div.tfp-value { cursor:pointer; margin-top:1px; }
+	
+	div.clear-value-link { cursor:pointer; padding-left:2em; }
+	
+	/* Additional info stuff */
+	div.additionalInfo { text-align:left; padding-left:0.3em; }
+	div.additionalInfo hr { width:92%; height:1px; color:rgb(147,189,226); background-color:rgb(147,189,226); }
+	
+	/* a non-line height manipulating version of <sup> */
+	.super-text {
+		font-size: 60%;
+		position: relative;
+		top: -0.5em; 
+	}
+	
+	.dyna-ui-widget { border: 1px solid #aaaaaa; background: #ffffff; }

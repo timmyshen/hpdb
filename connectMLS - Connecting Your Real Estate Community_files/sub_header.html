@@ -1,0 +1,138 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+ 
+<link rel="SHORTCUT ICON" href="http://connectmlsgw2.mredllc.com/images/icons/cmls.ico">
+
+<link rel="stylesheet" type="text/css" href="connectMLS.css">
+
+<title>connectMLS - Connecting Your Real Estate Community</title>
+<style type="text/css">
+<!--
+	BODY {
+		font-family: Verdana, Arial, Helvetica;
+		font-size : 11px;
+		color: black;
+		
+	}
+-->
+</style>
+<script type="text/javascript" src="request071009.js"></script>
+
+<script type="text/javascript" src="fixsplit.js"></script>
+
+<script type="text/javascript" src="jquery-1.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.css">
+<script type="text/javascript" src="jquery-ui-1.js"></script>
+
+<script type="text/javascript" src="json2.js"></script>
+
+
+<script>
+$(function(){
+	var quickSearchFunc = null;
+	if (top && typeof top.showQuickSearch == 'function') quickSearchFunc = top.showQuickSearch;
+	else if (typeof showQuickSearch == 'function') quickSearchFunc = showQuickSearch;
+	if (quickSearchFunc)
+	{
+		$(function(){ $(document).keydown(function(event){ if (event.ctrlKey && (event.which == 81 || event.which == 32)) { quickSearchFunc(); } }); });
+	}
+});
+</script>
+<script> var helpuri = '/help/clienthelp.jsp'; function openHelp() { openHelp(null); } function openHelp(path) { if (path != null) helpuri += '?mlsni/'+path; var properties='width=1100,height=600, menubar=0, toolbar=0'; popup = window.open(helpuri,'help',properties+'location=0,directories=0,status=0,scrollbars=1,resizable=1'); popup.window.focus(); } function openHelp2(){ openHelp2(null); } function openHelp2(path){ var uri = '/help/oldHelp/help.jsp'; if (path != null) uri += '?'+path; var properties='width=550,height=591, menubar=0, toolbar=0'; popup = window.open(uri,'help',properties+'location=0,directories=0,status=0,scrollbars=1,resizable=1'); popup.window.focus(); } function openWindow(url,target,args,returnWindow) { if (target != null && target.length > 0) target = target+'9600AA8B403D674F338D10802FABF3DA'; if (args) { if(args.length == 0) args = 'resizable=1'; else if (args.match("resizable=0") == null && args.match("resizable=1") == null) args += ',resizable=1'; } var newWindow = window.open(url,target,args); if (newWindow) newWindow.focus(); if (returnWindow) return newWindow; } var printThis = function() { window.print(); }; if(navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Firefox') == -1) { var printThis = function() { document.execCommand('print'); } } </script> <!--[if IE 7]> <script> printThis = function() { document.execCommand('print',false,null); } </script> <![endif]--> <!--[if lte IE 9]> <script> $(function(){ $('textarea[maxlength]').keyup(function(){ var $this = $(this), limit = parseInt($this.attr('maxlength')), val = $this.val(); if (val.length > limit) $this.val(val.substring(0, limit)); }); }); </script> <![endif]--> 
+<script>var headerHeight = 76;</script>
+
+
+
+
+
+<script>function closeWindow() {
+parent.window.close();
+}
+</script><script>
+function printPage() { 
+ if(parent.workspace){  parent.workspace.window.focus();
+  parent.workspace.printThis();
+ } else {  window.focus();
+  printThis();
+}
+ } 
+function printHints() {
+if (!window.showModalDialog) {
+	openWindow('../common/printHintsPopUp.jsp?dialog=false','','height=560,width=620');
+	return;
+} 
+if(parent.subheader.header.showPrintHints.value=='false'){
+	var r = window.showModalDialog('../common/printHintsPopUp.jsp',window,'dialogHeight:569px;dialogWidth:610px;scroll:no;status:no;resizable:yes');
+if(r != 'undefined' && r == 'true')
+	{
+parent.subheader.document.header.showPrintHints.value='true';
+parent.subheader.document.suppPrint.submit();
+	}
+	}
+else { printPage(); }parent.subheader.location.reload();
+	}
+</script>
+<script>
+function printHintsPrintHintsLink() {
+		openWindow('../common/printHintsPopUp.jsp?hint=true&dialog=false','','height=615,width=620');
+}
+</script>
+
+
+<style>
+	A:link {color:#000080; text-decoration: none } 
+	A:visited {color:#000080; text-decoration: none}
+	A:hover {color:#000080; text-decoration: underline }
+</style>
+
+<script>
+
+    
+	
+		if (parent.navpanel == null) parent.document.getElementById('fs').rows= '55,*';
+		else parent.document.getElementById('fs').rows = '55,0,*';
+	
+  
+
+</script>
+	
+</head>
+<body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0" background="sub_header_data/grad_blue.gif" marginheight="0" marginwidth="0">
+<form name="header">
+<input name="frameHeight" value="55" type="hidden">
+<table style=" margin-left:5px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td height="23"><span class="subtitle" style="letter-spacing: 1px; font-size:12px">Printable View</span></td>
+
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">  
+  
+  <tbody><tr> 
+  	<td height="29" nowrap="nowrap">
+  	<table cellpadding="0" cellspacing="0" width="100%">
+  	<tbody><tr><td>&nbsp;</td><td nowrap="nowrap" width="100%"><span style="white-space:nowrap" id="content"><a class="cmLink" href="javascript:%20closeWindow()" onmouseover="with (document.getElementById('closeWin').style) { borderColor : '#003366'; backgroundColor: '#EFF7FF'; }" onmouseout="with (document.getElementById('closeWin').style) { borderColor : '#E2ECFF'; backgroundColor : '#E2ECFF'; }" onclick="this.blur();" id="closeWinLink"><img id="closeWin" src="sub_header_data/delete.gif" style="border:0px  " height="19" hspace="2" align="absmiddle" width="20">Close</a>&nbsp;<input name="showPrintHints" value="false" type="hidden"><a class="cmLink" href="javascript:%20printPage()" onmouseover="with (document.getElementById('print').style) { borderColor : '#003366'; backgroundColor: '#EFF7FF'; }" onmouseout="with (document.getElementById('print').style) { borderColor : '#E2ECFF'; backgroundColor : '#E2ECFF'; }" onclick="this.blur();" id="printLink"><img id="print" src="sub_header_data/print.gif" style="border:0px  " height="19" hspace="2" align="absmiddle" width="20">Print</a>&nbsp;<a class="cmLink" href="javascript:%20printHintsPrintHintsLink()" title="Click here for hints on printing." onmouseover="with (document.getElementById('printhint').style) { borderColor : '#003366'; backgroundColor: '#EFF7FF'; }" onmouseout="with (document.getElementById('printhint').style) { borderColor : '#E2ECFF'; backgroundColor : '#E2ECFF'; }" onclick="this.blur();" id="printhintLink"><img id="printhint" src="sub_header_data/help.gif" style="border:0px  " height="19" hspace="2" align="absmiddle" width="20">Click here for hints on printing</a>&nbsp;</span></td><td align="right" nowrap="nowrap"><span style="white-space:nowrap"></span></td></tr>
+  	</tbody></table>
+  	</td>
+  </tr>
+
+  <tr><td style="border-top:solid 1px #E1E1E1; background-color:#BEBEBE; border-bottom: solid 1px #000000" height="1"><img src="PrintableView_data/clear.gif" height="1" width="1"></td></tr>
+</tbody></table>
+
+</form>
+<form name="suppPrint" target="footer" action="../servlet/limaCommand" method="post"><!-- suppress print support--><input name="command" value="UpdateUserPrintHintsPrefs" type="hidden"></form>
+ 
+
+
+
+
+
+
+
+ 
+ 
+
+</body></html>
+<!-- End HTML -->

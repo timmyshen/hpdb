@@ -1,0 +1,51 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+ 
+<link rel="SHORTCUT ICON" href="http://connectmlsgw2.mredllc.com/images/icons/cmls.ico">
+
+<link rel="stylesheet" type="text/css" href="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/connectMLS.css">
+
+<title>connectMLS - Connecting Your Real Estate Community</title>
+<style type="text/css">
+<!--
+	BODY {
+		font-family: Verdana, Arial, Helvetica;
+		font-size : 11px;
+		color: black;
+		
+	}
+-->
+</style>
+<script type="text/javascript" src="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/request071009.js"></script>
+
+<script type="text/javascript" src="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/fixsplit.js"></script>
+
+<script type="text/javascript" src="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/jquery-1.js"></script>
+<link rel="stylesheet" type="text/css" href="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/jquery-ui-1.css">
+<script type="text/javascript" src="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/jquery-ui-1.js"></script>
+
+<script type="text/javascript" src="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/json2.js"></script>
+
+
+<script>
+$(function(){
+	var quickSearchFunc = null;
+	if (top && typeof top.showQuickSearch == 'function') quickSearchFunc = top.showQuickSearch;
+	else if (typeof showQuickSearch == 'function') quickSearchFunc = showQuickSearch;
+	if (quickSearchFunc)
+	{
+		$(function(){ $(document).keydown(function(event){ if (event.ctrlKey && (event.which == 81 || event.which == 32)) { quickSearchFunc(); } }); });
+	}
+});
+</script>
+<script> var helpuri = '/help/clienthelp.jsp'; function openHelp() { openHelp(null); } function openHelp(path) { if (path != null) helpuri += '?mlsni/'+path; var properties='width=1100,height=600, menubar=0, toolbar=0'; popup = window.open(helpuri,'help',properties+'location=0,directories=0,status=0,scrollbars=1,resizable=1'); popup.window.focus(); } function openHelp2(){ openHelp2(null); } function openHelp2(path){ var uri = '/help/oldHelp/help.jsp'; if (path != null) uri += '?'+path; var properties='width=550,height=591, menubar=0, toolbar=0'; popup = window.open(uri,'help',properties+'location=0,directories=0,status=0,scrollbars=1,resizable=1'); popup.window.focus(); } function openWindow(url,target,args,returnWindow) { if (target != null && target.length > 0) target = target+'9600AA8B403D674F338D10802FABF3DA'; if (args) { if(args.length == 0) args = 'resizable=1'; else if (args.match("resizable=0") == null && args.match("resizable=1") == null) args += ',resizable=1'; } var newWindow = window.open(url,target,args); if (newWindow) newWindow.focus(); if (returnWindow) return newWindow; } var printThis = function() { window.print(); }; if(navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Firefox') == -1) { var printThis = function() { document.execCommand('print'); } } </script> <!--[if IE 7]> <script> printThis = function() { document.execCommand('print',false,null); } </script> <![endif]--> <!--[if lte IE 9]> <script> $(function(){ $('textarea[maxlength]').keyup(function(){ var $this = $(this), limit = parseInt($this.attr('maxlength')), val = $this.val(); if (val.length > limit) $this.val(val.substring(0, limit)); }); }); </script> <![endif]--> 
+<script>var headerHeight = 76;</script>
+
+
+</head><frameset id="fs" framespacing="0" border="false" rows="55,*" frameborder="0">
+  <frame name="subheader" id="subheader" scrolling="no" noresize="noresize" target="workspace" src="../common/blank_header.jsp" marginwidth="0" marginheight="0" visibility="visible">
+  <frame name="workspace" id="workspace" scrolling="auto" marginwidth="12" marginheight="3" target="main" src="connectMLS%20-%20Connecting%20Your%20Real%20Estate%20Community_files/PrintableView.html">
+</frameset>
+</html>

@@ -1,0 +1,5 @@
+A { text-decoration: none; }
+
+.hideForPrint { display: none; }
+.report #photosWrapper {width:900px;}
+.report #photosWrapper .rowitem .photoWrapper{width:240px;}
