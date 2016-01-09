@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 import sys
 
 def extract_table_cells(table):
+    '''
+    deprecated
+    '''
     td_all = table.find_all('td')
     cells = [td.string.encode('ascii', 'ignore') for td in td_all
      if td.string is not None]
@@ -19,6 +22,9 @@ def extract_key_value(table):
         columns=['Key','Value'])
 
 def kvlist2df(kvlist):
+    '''
+    deprecated
+    '''
     return pd.DataFrame(zip(kvlist[0::2], kvlist[1::2]),
      columns=['Key', 'Value'])
 
