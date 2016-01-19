@@ -2,6 +2,8 @@ import bs4
 import pandas as pd
 from bs4 import BeautifulSoup
 import sys
+import csv
+
 
 def extract_table_cells(table):
     '''
@@ -18,8 +20,7 @@ def extract_key_value(table):
     kstring = [k.string.strip().encode('ascii', 'ignore') if k.string is not None else k.string for k in td_key]
     vstring = [v.string if v is not None else '' for v in td_value]
     vstring = [v.strip().encode('ascii','ignore') if v is not None else v for v in vstring]
-    return pd.DataFrame(zip(kstring,vstring),
-        columns=['Key','Value'])
+    return dict(zip(kstring,vstring))
 
 def extract_tablelabel(table):
     td_table = table.find_all('tr')
@@ -38,7 +39,7 @@ def extract_tablelabel(table):
                 value = item.string
                 table_dict[key] = value
     # print table_dict
-    return pd.DataFrame(table_dict.items(),columns=['Key','Value'])
+    return table_dict
 
 
 def extract_span(table):
@@ -47,8 +48,7 @@ def extract_span(table):
     kstring = [k.string.strip().encode('ascii', 'ignore') if k.string is not None else k.string for k in td_key]
     vstring = [v.string if v is not None else '' for v in td_value]
     vstring = [v.strip().encode('ascii','ignore') if v is not None else v for v in vstring]
-    return pd.DataFrame(zip(kstring,vstring),
-        columns=['Key','Value'])
+    return dict(zip(kstring,vstring))
 
 
 
@@ -59,7 +59,7 @@ def kvlist2df(kvlist):
     return pd.DataFrame(zip(kvlist[0::2], kvlist[1::2]),
      columns=['Key', 'Value'])
 
-def page2df(pagehtml):
+def page2dict(pagehtml):
     soup = BeautifulSoup(open(pagehtml), 'lxml')
     #soup = soup.encode('ascii')
     tables = soup.findAll('table')
@@ -67,14 +67,14 @@ def page2df(pagehtml):
     # tables_extracted = [tables[3],tables[4]]
     tablelabel = tables[13]
     span_extracted = tables[14]
-    kvs1 = extract_key_value(tables[3])
-    kvs2 = extract_key_value(tables[4])
-    kvs3 = extract_tablelabel(tablelabel)
-    kvs4 = extract_span(span_extracted)
+    kvs = extract_key_value(tables[3])
+    kvs.update(extract_key_value(tables[4]))
+    kvs.update(extract_tablelabel(tablelabel))
+    kvs.update(extract_span(span_extracted))
     # kvs3 = extract_key_value(tables[7])
     # df = kvlist2df(kvs[1:])
     #df.replace('\xa0', '', inplace=True)
-    return pd.concat([kvs1,kvs2,kvs3,kvs4])
+    return kvs
 
 # df = page2df('naper_print.html')
 
@@ -82,5 +82,9 @@ def page2df(pagehtml):
 if __name__ == '__main__':
     page = sys.argv[1]
     outfile = sys.argv[2]
-    df = page2df(page)
-    df.to_csv(outfile,index=False)
+    hpdict = page2dict(page)
+    with open(outfile,'wb') as f:
+        w = csv.writer(f)
+        w.writerow(hpdict.keys())
+        w.writerow(hpdict.values())
+    # df.to_csv(outfile,index=False)
