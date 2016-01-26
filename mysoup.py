@@ -3,6 +3,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import sys
 import csv
+import os
 
 
 def extract_table_cells(table):
@@ -80,21 +81,24 @@ def page2dict(pagehtml):
 
 
 if __name__ == '__main__':
-    page = sys.argv[1]
-    outfile = sys.argv[2]
-    hpdict = page2dict(page)
-    with open(outfile,'wb') as f:
-        w = csv.writer(f)
-        w.writerow(hpdict.keys())
-        w.writerow(hpdict.values())
+    inputfiles = []
+    with open('settings','rb') as f:
+        for line in f.readlines():
+            l,name = line.strip().split(':')
+            inputfiles.append((l,name))
+    pagefile = inputfiles[0][1].strip()
+    outfile = inputfiles[1][1].strip()
+    hpdicts = []
+    for page in os.listdir('./'+pagefile):
+        hpdicts.append(page2dict(page))
+    hpdictkeys = set().union(*[hpdict.keys() for hpdict in hpdicts])
+    with open(outfile, 'r+b') as f:
+        header = next(csv.reader(f))
+        newh = list(hpdictkeys-set(header))
+        header += newh
+        dict_writer = csv.DictWriter(f, header, None)
+        dict_writer.writerows(hpdicts)
     # df.to_csv(outfile,index=False)
 
 
-if __name__ == '__main__':
-    #1. read setting
 
-    #2. read file from input_files:
-
-    #3. run the script
-
-    #4. stack the record to the hpdb.csv
