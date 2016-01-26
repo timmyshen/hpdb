@@ -88,3 +88,13 @@ if __name__ == '__main__':
         w.writerow(hpdict.keys())
         w.writerow(hpdict.values())
     # df.to_csv(outfile,index=False)
+
+
+if __name__ == '__main__':
+    #1. read setting
+
+    #2. read file from input_files:
+
+    #3. run the script
+
+    #4. stack the record to the hpdb.csv

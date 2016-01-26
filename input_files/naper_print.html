@@ -1,0 +1,604 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+ 
+<link rel="SHORTCUT ICON" href="http://connectmlsgw2.mredllc.com/images/icons/cmls.ico">
+
+<link rel="stylesheet" type="text/css" href="connectMLS.css">
+
+<title>connectMLS - Connecting Your Real Estate Community</title>
+<style type="text/css">
+<!--
+	BODY {
+		font-family: Verdana, Arial, Helvetica;
+		font-size : 11px;
+		color: black;
+		
+	}
+-->
+</style>
+<script type="text/javascript" src="request071009.js"></script>
+
+<script type="text/javascript" src="fixsplit.js"></script>
+
+<script type="text/javascript" src="jquery-1.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.css">
+<script type="text/javascript" src="jquery-ui-1.js"></script>
+
+<script type="text/javascript" src="json2.js"></script>
+
+
+<script>
+$(function(){
+	var quickSearchFunc = null;
+	if (top && typeof top.showQuickSearch == 'function') quickSearchFunc = top.showQuickSearch;
+	else if (typeof showQuickSearch == 'function') quickSearchFunc = showQuickSearch;
+	if (quickSearchFunc)
+	{
+		$(function(){ $(document).keydown(function(event){ if (event.ctrlKey && (event.which == 81 || event.which == 32)) { quickSearchFunc(); } }); });
+	}
+});
+</script>
+<script> var helpuri = '/help/clienthelp.jsp'; function openHelp() { openHelp(null); } function openHelp(path) { if (path != null) helpuri += '?mlsni/'+path; var properties='width=1100,height=600, menubar=0, toolbar=0'; popup = window.open(helpuri,'help',properties+'location=0,directories=0,status=0,scrollbars=1,resizable=1'); popup.window.focus(); } function openHelp2(){ openHelp2(null); } function openHelp2(path){ var uri = '/help/oldHelp/help.jsp'; if (path != null) uri += '?'+path; var properties='width=550,height=591, menubar=0, toolbar=0'; popup = window.open(uri,'help',properties+'location=0,directories=0,status=0,scrollbars=1,resizable=1'); popup.window.focus(); } function openWindow(url,target,args,returnWindow) { if (target != null && target.length > 0) target = target+'C483A7A8DC5CC27FCE3483E1387EDDE0'; if (args) { if(args.length == 0) args = 'resizable=1'; else if (args.match("resizable=0") == null && args.match("resizable=1") == null) args += ',resizable=1'; } var newWindow = window.open(url,target,args); if (newWindow) newWindow.focus(); if (returnWindow) return newWindow; } var printThis = function() { window.print(); }; if(navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Firefox') == -1) { var printThis = function() { document.execCommand('print'); } } </script> <!--[if IE 7]> <script> printThis = function() { document.execCommand('print',false,null); } </script> <![endif]--> <!--[if lte IE 9]> <script> $(function(){ $('textarea[maxlength]').keyup(function(){ var $this = $(this), limit = parseInt($this.attr('maxlength')), val = $this.val(); if (val.length > limit) $this.val(val.substring(0, limit)); }); }); </script> <![endif]--> 
+<script>var headerHeight = 76;</script>
+
+
+
+<script>
+function photoBrowser(dcid,photonum) {
+var windowurl = '/common/photoBrowser.jsp?dcid=' + dcid;
+if (photonum) windowurl += '&jumpTo=' + photonum;
+openWindow(windowurl,'photoBrowser','height=645,width=995,directories=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no');
+}
+
+function closeWindow()
+{
+	parent.window.close();
+}
+function loadOtherPage(uri)
+{
+	window.location.href=uri;
+}
+</script>
+<script language="JavaScript">
+$(function() {
+if(parent.subheader) { var subHeaderPage = parent.subheader.location.href; 
+  parent.subheader.location.replace('../common/sub_header.jsp?uqid=1450907389295&VBN=dynaconn.soy.pages.clienthome.postedlistings.PrintResponsivePostings');
+}	if (parent.parent.document.getElementById('mainfs'))		parent.parent.document.getElementById('mainfs').rows=headerHeight+',*,17';});
+</script>
+<script>function taxLookup(dcid) {
+openWindow('../common/PrintableView.jsp?soyName=dynaconn.soy.pages.TaxLookupPage&dcid='+dcid,'showDetails','height=480,width=800,scrollbars=yes,resizable=yes')}
+</script><script>
+function toggleJustifiedListingInfo(which,rightJustified)
+{
+	var menu = $('#listingMenu'+which), hidden = menu.css('display') == 'none';
+	$('.listingMenu').hide();
+	$('.addinfotd').css('background-color','');
+	if (hidden) {
+		$('#addinfotd'+which).css('background-color','#93BEE2');
+		menu.show();
+	}
+}
+</script>
+<script type="text/javascript" src="PrintableView_data/overflowable.js"></script>
+
+<link rel="stylesheet" type="text/css" href="PrintableView_data/reports.css">
+<link rel="stylesheet" type="text/css" href="PrintableView_data/reports-screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="PrintableView_data/reports-print.css" media="print">
+<style type="text/css">
+<!--
+.report { position: relative; } 
+.mapnumber { position: absolute; top:0; left:0; background-color:white; padding:0.25em 0.75em; font-weight:bold; } 
+.value, .Label, .iLabel, .TableLabel { line-height: 1.1em; } 
+.value, span.brochure, .userColor { color:rgb(0,0,128); } 
+.header { font-size:13px; } 
+.report td, .report { font-size:11px; } 
+.report .listingMenu td,.report .listingMenu a {font-size:11px;}-->
+</style>
+<style type="text/css">
+<!--
+.report { font-weight:normal; } 
+.value, .valueblack, td.brochure { font-weight:bold; }
+-->
+</style>
+<style media="print">
+<!--
+	A { text-decoration: none; } 
+	.hideForPrint {display:none} 
+-->
+</style>
+<style>
+.hiint {
+	background: #00FF00;
+		font-size : 11px;
+		border: solid 1px rgb(0,53,106)
+	}
+	.medint { 
+		background: #FFFF00;
+		font-size : 11px;
+		border: solid 1px rgb(0,53,106)
+	}
+	.loint { 
+		background: red;
+		font-size : 11px;
+		border: solid 1px rgb(0,53,106)
+	}
+</style>
+<style type="text/css" media="print">
+<!--
+ .header { font-size:12px; } 
+ -->
+</style>
+<style id="fsPrint" type="text/css" media="print">
+<!--
+ .report td, .report { font-size:10.0px; } 
+ -->
+</style>
+<script type="text/javascript">
+var alldcids = ["20D51A074445E778E0533401010A83B1"];
+var onthispage = ["20D51A074445E778E0533401010A83B1"];
+var otherselected = [""];
+$(function(){ $('#bogus-id').attr('checked','checked'); });
+function getSelected() {
+	var allselected = new Array();
+	_addAll(allselected, otherselected);
+	var n = 0;
+	for (n = 0; n < allpage.length; ++n) {
+		var c = document.getElementById(allpage[n]+'sel');
+		if (c && c.checked) allselected.push(allpage[n]);
+	}
+	_removeAll(allselected,['']);
+	return allselected;}
+function mapListings(which)
+{
+		openWindow("/maps/pickCourse.jsp?soyName=MapListingsPopup&clear=true&mapOnly=true&i=1450764165369&provider=dynaconn.soy.pages.clienthome.postedlistings.Postings&selection="+which+"&category=CXP",'','');
+}
+function compactView(dcid) 
+{
+	var url = '/common/PrintableView.jsp?soyName=dynaconn.soy.pages.clienthome.postedlistings.PrintResponsivePostings&compact=true&dcid='+dcid;
+	openWindow(url,'','');
+}
+function printerFriendly(which, compact) 
+{
+	var url = '/common/PrintableView.jsp?soyName=dynaconn.soy.pages.clienthome.postedlistings.PrintResponsivePostings&selection='+which;
+	if (compact) url += "&compact=true";
+	openWindow(url,'','');
+}
+function photoBrowser(dcid,photonum) {
+var windowurl = '/common/photoBrowser.jsp?dcid=' + dcid;
+if (photonum) windowurl += '&jumpTo=' + photonum;
+openWindow(windowurl,'photoBrowser','height=645,width=995,directories=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no');
+}
+</script>
+
+</head>
+
+<body onload=""><input name="selectedDCIDs" value="20D51A074445E778E0533401010A83B1" type="hidden">
+
+<div class="report">
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+	<tbody><tr>
+		<td valign="top"><table><tbody><tr><td><table style="border: solid 1px rgb(00,51,102)" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td align="center" bgcolor="#E1E1E1"><a href="javascript:photoBrowser('20D51A074445E778E0533401010A83B1',%20$('#').find('.picCount').text()%20-%201);"><img class="printPhoto" src="PrintableView_data/m_P_1443494125765_3307front.jpg" height="200" border="0" width="300"></a></td></tr></tbody></table>
+</td></tr></tbody></table></td>
+		<td valign="top" width="100%">
+			<table border="0" cellpadding="0" cellspacing="1" width="100%">
+				<tbody><tr>
+					<td colspan="2" class="value"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attached Single</b></td>
+					<td class="Label">MLS&nbsp;#:</td><td class="value">09050593</td>
+					<td class="Label">List&nbsp;Price:</td><td class="value"><a href="javascript:openWindow('/tools/PaymentCalc.jsp?firstPop=true&amp;popup=true&amp;lp=283215&amp;tax=6041.92&amp;i=1450764165369','popupWindow','height=640,width=640,scrollbars=1,menubar=1,resizable=1');">$283,215</a></td> 				</tr>
+				<tr>
+					<td class="Label">Status:</td><td width="33%"><span style="color:green"><b>RACT</b></span></td>
+					<td class="Label">List&nbsp;Date:</td><td class="value" width="33%">09/28/2015</td>
+					<td class="Label">Orig&nbsp;List&nbsp;Price:</td><td class="value" width="34%">$289,215</td>
+				</tr>
+				<tr>
+					<td class="Label">Area:</td><td class="value">540 &nbsp;</td>
+					<td class="Label">List&nbsp;Dt&nbsp;Rec:</td><td class="value">09/29/2015</td>
+					<td class="Label">Sold&nbsp;Price:</td><td class="value">&nbsp;</td>
+				</tr>
+				<tr>
+					 <td colspan="4">&nbsp;</td> 					<td class="Label">SP&nbsp;Incl. Parking:</td><td class="value"></td>
+				</tr>
+				<tr>
+					<td class="Label">Address:</td>
+					<td colspan="5" class="value"><a href="javascript:openWindow('/maps/pickCourse.jsp?soyName=MapListingsPopup&amp;clear=true&amp;dcid=20D51A074445E778E0533401010A83B1&amp;category=AT&amp;i=1450764165369','MapView','height=640,width=1000,scrollbars=1,menubar=1,resizable=1');">3307  Rosecroft Ln , Naperville, Illinois 60564</a></td>
+				</tr>
+				<tr>
+					<td class="Label">Directions:</td><td colspan="5" class="value">RT 59 TO DEERING BAY DRIVE - NORTH TO ROSECROFT LN, EAST TO HOME</td>
+				</tr>
+				<tr>
+										<td colspan="4"></td>
+										<td class="Label">Lst.&nbsp;Mkt.&nbsp;Time:</td><td class="value">87</td>
+				</tr>
+				<tr>
+					<td class="Label">Closed:</td><td class="value"></td>
+					<td class="Label">Contract:</td><td class="value"></td>
+					<td class="Label">Points:</td><td class="value"></td>
+				</tr>
+				<tr>
+					<td class="Label">Off&nbsp;Mkt:</td><td class="value"></td>
+					<td class="Label">Financing:</td><td class="value"></td>
+					<td class="Label">Contingency:</td> <td class="value"></td>
+				</tr>
+				<tr>
+					<td class="Label">Year&nbsp;Built:</td><td class="value">2001</td>
+					<td class="Label">Blt&nbsp;Before&nbsp;78:</td><td class="value">No</td>
+					<td class="Label">Curr.&nbsp;Leased:</td>
+					<td class="value">No
+					 </td>
+				</tr>
+				<tr>
+					<td class="Label">Dimensions:</td><td colspan="3" class="value">COMMON</td>
+					<td class="Label">&nbsp;</td><td class="value"></td>
+				</tr>
+				<tr>
+					<td class="Label">Ownership:</td><td class="value">Fee Simple w/ HO Assn.</td>
+					<td class="Label">Subdivision:</td><td class="value">Heatherstone</td>
+					<td class="Label">Model:</td><td class="value"></td>
+				</tr>
+				<tr>
+					<td class="Label">Corp&nbsp;Limits:</td><td class="value">Naperville</td>
+					<td class="Label">Township:</td><td class="value">Wheatland</td>
+					<td class="Label">County:</td><td class="value">Will</td>
+				</tr>
+				<tr>
+					<td class="Label">Coordinates:</td>
+					<td class="value">
+												N: S: E: W:
+					</td>
+					<td class="Label">&nbsp;</td><td class="value"></td>
+					<td class="Label">#&nbsp;Fireplaces:</td><td class="value">1</td>
+				</tr>
+				<tr>
+					<td class="Label">Rooms:</td><td class="value">7</td>
+					<td class="Label">Bathrooms (Full/Half):</td><td class="value">2/1</td>
+					<td class="Label">Parking:</td><td class="value">Garage</td>
+				</tr>
+				<tr>
+					<td class="Label">Bedrooms:</td><td class="value">2</td>
+					<td class="Label">Master&nbsp;Bath:</td><td class="value">Full</td>
+					<td class="Label">#&nbsp;Spaces:</td><td class="value">
+													Gar:2																		</td>
+				</tr>
+				<tr>
+					<td class="Label">Basement:</td><td class="value">Full</td>
+					<td class="Label">Bsmnt.&nbsp;Bath:</td><td class="value">No</td>
+					<td class="Label">Parking&nbsp;Incl. In&nbsp;Price:</td><td class="value"></td>
+				</tr>
+				<tr>
+					<td class="Label">Waterfront:</td><td class="value">No</td>
+					<td class="Label">Appx&nbsp;SF:</td><td class="value">1776</td>
+					<td class="Label">SF&nbsp;Source:</td><td class="value">Assessor</td>
+				</tr>
+				<tr>
+					<td class="Label">Total&nbsp;Units:</td><td class="value">6</td>
+					<td class="Label">Unit&nbsp;Floor&nbsp;Lvl.:</td><td class="value">1</td>
+					<td class="Label" rowspan="2">#&nbsp;Days&nbsp;for&nbsp;&nbsp;<br>Bd&nbsp;Apprvl:</td>
+				</tr>
+				<tr>
+					<td class="Label">#&nbsp;Stories:</td><td class="value" colspan="3">2</td>
+										<td class="value">0</td>
+				</tr>
+				<tr>
+					<td class="Label">%&nbsp;Own.&nbsp;Occ.:</td><td class="value"></td>
+					<td class="Label">%&nbsp;Cmn.&nbsp;Own.:</td><td class="value"></td>
+					<td class="Label">Fees/Approvals:</td><td class="value"></td>
+				</tr>
+							</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+<div style="border-top:solid 1px #336699"><img src="PrintableView_data/clear.gif" height="1" width="1"></div>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr>
+	<td valign="top"><table><tbody><tr><td><table style="border: solid 1px rgb(00,51,102)" height="200" border="0" cellpadding="0" cellspacing="0" width="300"><tbody><tr><td id="map20D51A074445E778E0533401010A83B1" align="center" bgcolor="#F0F0E0"><img src="PrintableView_data/15.jpg"></td></tr></tbody></table></td></tr></tbody></table></td>
+	<td valign="top" width="100%">
+
+<div style="text-align:left;"><span class="iLabel">Remarks:</span>&nbsp;&nbsp;
+<span class="value">
+JUST FANTASTIC! UPDATED! BEAUTIFULLY DECORATED HEATHERSTONE TOWNHOUSE! 2
+ BEDROOMS, 2 1/2 BATHROOMS, LOFT AND FULL BASEMENT! OPEN FLOOR PLAN! 
+FAMILY ROOM &amp; DINING ROOM HAVE NEWER HARDWOOD FLOORS! FAMILY ROOM 
+HAS GAS FIREPLACE! GOURMET KITCHEN W/MAPLE CABINETS, HARDWOOD FLOOR, 
+GRANITE COUNTERS, TILE BACK SPLASH &amp; EAT-IN AREA! 1ST FLOOR LAUNDRY!
+ MASTER SUITE W/VAULTED CEILINGS, WALK-IN CLOSET &amp; LUXURY BATH! 
+PAINTED WHITE TRIM! 2 CAR GARAGE! CONCRETE PATIO! DISTRICT #204 SCHOOLS!
+ A MUST SEE HOME!</span></div>
+
+<div style="border-top:solid 1px #336699"><img src="PrintableView_data/clear.gif" height="1" width="1"></div>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td valign="top" width="20%">
+			<span class="TableLabel">School Data</span>
+			<table border="0" cellpadding="0" cellspacing="1">
+				<tbody><tr><td class="Label">Elementary:</td><td class="value" nowrap="nowrap">White Eagle (204) &nbsp;</td></tr>
+								<tr><td class="Label">Junior&nbsp;High:</td><td class="value" nowrap="nowrap">Still (204) &nbsp;</td></tr>
+								<tr><td class="Label">High&nbsp;School:</td><td class="value" nowrap="nowrap">Waubonsie Valley (204) &nbsp;</td></tr>
+												<tr><td class="Label">Other:</td><td class="value" nowrap="nowrap">  &nbsp;</td></tr>
+							</tbody></table>
+		</td>
+
+</tr></tbody></table>
+<div style="border-top:solid 1px #336699"><img src="PrintableView_data/clear.gif" height="1" width="1"></div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr>
+
+		<td align="center" valign="top" width="20%">
+			<span class="TableLabel">Assessments</span>
+			<table border="0" cellpadding="0" cellspacing="1">
+				<tbody><tr>
+					</tr><tr><td class="Label">Amount:</td><td class="value">$217 &nbsp;</td></tr>
+					<tr><td class="Label">Frequency:</td><td class="value">Monthly &nbsp;</td></tr>
+					<tr><td class="Label">Special&nbsp;Assessments:</td><td class="value">No &nbsp;</td></tr>
+										<tr><td class="Label">Special&nbsp;Service&nbsp;Area:</td><td class="value">No </td></tr>
+										<tr><td class="Label">Master&nbsp;Association:</td><td class="value">No </td></tr>
+				
+			</tbody></table>
+		</td>
+		<td align="center" valign="top" width="20%">
+			<span class="TableLabel">Tax</span>
+			<table border="0" cellpadding="0" cellspacing="1">
+				<tbody><tr>
+					</tr><tr><td class="Label">Amount:</td><td class="value">$6,041.92</td></tr>
+					<tr><td class="Label">PIN:</td><td class="value">01044100460000</td></tr>
+					<tr><td class="Label">Tax&nbsp;Year:</td><td class="value">2013</td></tr>
+					<tr><td class="Label">Tax&nbsp;Exmps:</td><td class="value"></td></tr>
+					<tr><td class="Label">Coop&nbsp;Tax&nbsp;Deduction:</td><td class="value"></td></tr>
+					<tr><td class="Label">Tax&nbsp;Deduction&nbsp;Year:</td><td class="value"></td></tr>
+				
+			</tbody></table>
+		</td>
+		<td align="center" valign="top" width="20%">		
+			<span class="TableLabel">Pet Information</span>
+			<table border="0" cellpadding="0" cellspacing="1">
+				<tbody><tr>
+					</tr><tr><td class="Label">Pets&nbsp;Allowed:</td><td class="value">Cats OK, Dogs OK, Pet Count Limitation</td></tr>
+					<tr><td class="Label">Max&nbsp;Pet&nbsp;Weight:</td><td class="value">75</td></tr>
+				
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+</td></tr></tbody></table>
+
+<div style="border-top:solid 1px #336699"><img src="PrintableView_data/clear.gif" height="1" width="1"></div>
+
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+	<tbody><tr>
+		<td class="TableLabel" align="right" width="10%">Room&nbsp;Name</td>
+		<td class="TableLabel" width="6%">&nbsp;Size</td>
+		<td class="TableLabel" width="14%">Level</td>
+		<td class="TableLabel" width="10%">Flooring</td>
+		<td class="TableLabel" width="10%">Win&nbsp;Trmt&nbsp;</td>
+		<td class="TableLabel" align="right" width="10%">Room&nbsp;Name</td>
+		<td class="TableLabel" width="6%">&nbsp;Size</td>
+		<td class="TableLabel" width="14%">Level</td>
+		<td class="TableLabel" width="10%">Flooring</td>
+		<td class="TableLabel" width="10%">Win&nbsp;Trmt&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="Label">Living&nbsp;Room</td>
+		<td class="value"></td>
+		<td class="value">Not Applicable</td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+		<td class="Label">Master&nbsp;Bedroom</td>
+		<td class="value">21X14</td>
+		<td class="value">2nd Level</td>
+		<td class="value">Carpet</td>
+		<td class="value" align="center">Blinds</td>
+	</tr>
+	<tr>
+		<td class="Label">Dining&nbsp;Room</td>
+		<td class="value">12X9</td>
+		<td class="value"><nobr>Main Level</nobr></td>
+		<td class="value"><nobr>Hardwood</nobr></td>
+		<td class="value" align="center">Blinds</td>
+		<td class="Label">2nd&nbsp;Bedroom</td>
+		<td class="value">12X12</td>
+		<td class="value">2nd Level</td>
+		<td class="value">Carpet</td>
+		<td class="value" align="center"></td>
+	</tr>
+	<tr>
+		<td class="Label">Kitchen</td>
+		<td class="value">12X11</td>
+		<td class="value">Main Level</td>
+		<td class="value">Hardwood</td>
+		<td class="value" align="center"></td>
+		<td class="Label">3rd&nbsp;Bedroom</td>
+		<td class="value"></td>
+		<td class="value">Not Applicable</td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+	</tr>
+	<tr>
+		<td class="Label">Family&nbsp;Room</td>
+		<td class="value">15X16</td>
+		<td class="value">Main Level</td>
+		<td class="value">Hardwood</td>
+		<td class="value" align="center">Blinds</td>
+		<td class="Label">4th&nbsp;Bedroom</td>
+		<td class="value"></td>
+		<td class="value">Not Applicable</td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+	</tr>
+	<tr>
+		<td class="Label">Laundry&nbsp;Room</td>
+		<td class="value">7X9</td>
+		<td class="value">Main Level</td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+		<td class="Label">Eating Area</td>
+		<td class="value">8X8</td>
+		<td class="value">Main Level</td>
+		<td class="value">Hardwood</td>
+		<td class="value" align="center"></td>
+	</tr> 	
+	<tr>
+		<td class="Label">Loft</td>
+		<td class="value">17X11</td>
+		<td class="value">2nd Level</td>
+		<td class="value">Carpet</td>
+		<td class="value" align="center"></td>
+		<td class="Label"></td>
+		<td class="value"></td>
+		<td class="value"></td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+	</tr>
+	<tr>
+		<td class="Label"></td>
+		<td class="value"></td>
+		<td class="value"></td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+		<td class="Label"></td>
+		<td class="value"></td>
+		<td class="value"></td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+	</tr>
+	<tr>
+		<td class="Label"></td>
+		<td class="value"></td>
+		<td class="value" nowrap="nowrap"></td>
+		<td class="value"></td>
+		<td class="value" align="center"></td>
+	</tr>
+</tbody></table>
+
+<div style="border-top:solid 1px #336699"><img src="PrintableView_data/clear.gif" height="1" width="1"></div>
+
+<div style="text-align:left;">
+<span class="iLabel">Interior&nbsp;Property&nbsp;Features:</span>
+<span class="value">
+Vaulted/Cathedral Ceilings, Hardwood Floors, 1st Floor Laundry</span>
+<br>
+<span class="iLabel">Exterior&nbsp;Property&nbsp;Features:</span>
+<span class="value">
+Patio</span>
+</div>
+
+<div style="border-top:solid 1px #336699"><img src="PrintableView_data/clear.gif" height="1" width="1"></div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td height="1" valign="top" width="33%">
+			<table cellpadding="1" cellspacing="1">
+				<tbody><tr><td><span class="iLabel">Age:</span><span class="value">11-15 Years</span></td></tr> 
+				<tr><td><span class="iLabel">Type:</span><span class="value">Townhouse-2 Story</span></td></tr> 
+				<tr><td><span class="iLabel">Exposure:</span><span class="value">W (West)</span></td></tr> 
+				<tr><td><span class="iLabel">Exterior:</span><span class="value">Vinyl Siding, Brick</span></td></tr> 
+				<tr><td><span class="iLabel">Air&nbsp;Cond:</span><span class="value">Central Air</span></td></tr> 
+				<tr><td><span class="iLabel">Heating:</span><span class="value">Forced Air</span></td></tr> 
+				<tr><td><span class="iLabel">Kitchen:</span><span class="value">Eating Area-Table Space</span></td></tr> 
+				<tr><td><span class="iLabel">Appliances:</span><span class="value">Oven/Range, Microwave, Dishwasher, Refrigerator, Washer, Dryer, Disposal</span></td></tr> 
+				<tr><td><span class="iLabel">Dining:</span><span class="value">Separate</span></td></tr> 
+				<tr><td><span class="iLabel">Bath&nbsp;Amn:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Fireplace&nbsp;Details:</span><span class="value">Gas Logs</span></td></tr> 
+				<tr><td><span class="iLabel">Fireplace&nbsp;Location:</span><span class="value">Family Room</span></td></tr> 
+				<tr><td><span class="iLabel">Electricity:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Equipment:</span><span class="value">CO Detectors, Ceiling Fan, Sump Pump</span></td></tr> 
+				<tr><td><span class="iLabel">Additional&nbsp;Rooms:</span><span class="value">Eating Area, Loft</span></td></tr> 
+			</tbody></table>
+		</td>
+		<td height="1" valign="top" width="34%">
+			<table cellpadding="1" cellspacing="1">
+								<tbody><tr><td><span class="iLabel">Garage&nbsp;Ownership:</span><span class="value">Owned 
+										</span></td></tr> 
+				<tr><td><span class="iLabel">Garage&nbsp;On&nbsp;Site:</span><span class="value">Yes</span></td></tr> 
+				<tr><td><span class="iLabel">Garage&nbsp;Type:</span><span class="value">Attached</span></td></tr> 
+				<tr><td><span class="iLabel">Garage&nbsp;Details:</span><span class="value">Garage Door Opener(s), Transmitter(s)</span></td></tr> 
+								<tr><td><span class="iLabel">Parking Ownership:</span><span class="value"> 
+										</span></td></tr> 
+				<tr><td><span class="iLabel">Parking&nbsp;On&nbsp;Site:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Parking&nbsp;Details:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Parking&nbsp;Fee&nbsp;(High/Low):</span><span class="value"> / </span></td></tr> 
+				<tr><td><span class="iLabel">Driveway:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Basement&nbsp;Details:</span><span class="value">Unfinished</span></td></tr> 
+				<tr><td><span class="iLabel">Foundation:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Exst&nbsp;Bas/Fnd:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Roof:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Disability&nbsp;Access:</span><span class="value">No</span></td></tr> 
+				<tr><td><span class="iLabel">Disability&nbsp;Details:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Lot&nbsp;Desc:</span><span class="value"></span></td></tr> 
+			</tbody></table>
+		</td>
+		<td height="1" valign="top" width="33%">
+			<table cellpadding="1" cellspacing="1">
+				<tbody><tr><td><span class="iLabel">Sewer:</span><span class="value">Sewer-Public</span></td></tr> 
+				<tr><td><span class="iLabel">Water:</span><span class="value">Lake Michigan</span></td></tr> 
+				<tr><td><span class="iLabel">Const&nbsp;Opts:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">General&nbsp;Info:</span><span class="value">School Bus Service</span></td></tr> 
+				<tr><td><span class="iLabel">Amenities:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Asmt&nbsp;Incl:</span><span class="value">Exterior Maintenance, Lawn Care, Snow Removal</span></td></tr> 
+				<tr><td><span class="iLabel">HERS&nbsp;Index&nbsp;Score:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Green&nbsp;Disc:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Green&nbsp;Rating&nbsp;Source:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Green&nbsp;Feats:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Sale&nbsp;Terms:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Possession:</span><span class="value">Closing</span></td></tr> 
+				<tr><td><span class="iLabel">Est&nbsp;Occp&nbsp;Date:</span><span class="value"></span></td></tr> 
+				<tr><td><span class="iLabel">Management:</span><span class="value">Manager Off-site</span></td></tr> 
+				<tr><td><span class="iLabel">Addl.&nbsp;Sales&nbsp;Info.:</span><span class="value">None</span></td></tr>
+				<tr><td><span class="iLabel">Agent&nbsp;Owned/Interest:</span><span class="value">No</span></td></tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+	
+
+
+
+<div style="clear:both;background-color:#EFF7FF;border-style:solid none;border-color:#336699;border-width:1px;text-align:center;padding:1px;"><span class="legal">Copyright
+ 2015 MRED LLC - The accuracy of all information, regardless of source, 
+including but not limited to square footages and lot sizes, is deemed 
+reliable but not guaranteed and should be personally verified through 
+personal inspection by and/or with the appropriate professionals. </span></div><table style="width:100%;" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="nowrap">MLS #: 09050593</td><td align="right"><table align="right" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td align="right">Prepared&nbsp;By:&nbsp;<span style="white-space: nowrap">Andy Linss </span>| <span style="white-space: nowrap">Re/Max Signature Homes </span>| <span style="white-space: nowrap">Direct: (630) 577-7455 </span>| <span style="white-space: nowrap">Cell: (630) 577-7455 </span>| <span style="white-space: nowrap">Email: andy@westsuburbanchicago.com </span>| <span style="white-space: nowrap">12/23/2015 </span></td></tr></tbody></table><br></td></tr></tbody></table>
+
+
+
+
+</div>
+
+<script>
+function printPage() { 
+ if(parent.workspace){  parent.workspace.window.focus();
+  parent.workspace.printThis();
+ } else {  window.focus();
+  printThis();
+}
+ } 
+function printHints() {
+if (!window.showModalDialog) {
+	openWindow('../common/printHintsPopUp.jsp?dialog=false','','height=560,width=620');
+	return;
+} 
+if(parent.subheader.header.showPrintHints.value=='false'){
+	var r = window.showModalDialog('../common/printHintsPopUp.jsp',window,'dialogHeight:569px;dialogWidth:610px;scroll:no;status:no;resizable:yes');
+if(r != 'undefined' && r == 'true')
+	{
+parent.subheader.document.header.showPrintHints.value='true';
+parent.subheader.document.suppPrint.submit();
+	}
+	}
+else { printPage(); }parent.subheader.location.reload();
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+</body></html>
+<!-- End HTML -->
